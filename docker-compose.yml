@@ -1,0 +1,20 @@
+version: '3.7'
+
+services:
+  runner:
+    image: drone/drone-runner-docker:1
+    restart: unless-stopped
+    environment:
+      - DRONE_RPC_PROTO
+      - DRONE_RPC_HOST
+      - DRONE_RPC_SECRET
+      - DRONE_RUNNER_CAPACITY
+      - DRONE_RUNNER_NAME
+    networks:
+      - runner
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+
+networks:
+  runner:
+    external: false
