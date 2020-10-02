@@ -1,9 +1,9 @@
-#version: '3.7'
-#
-#services:
-#  runner:
-#    container_name: drone-runner
-#
-#networks:
-#  runner:
-#    name: drone-runner
+version: '3.7'
+
+services:
+ runner:
+   container_name: drone-runner # Remove if using multiple instances
+
+networks:
+ runner:
+   name: drone-runner # Remove if using multiple instances
